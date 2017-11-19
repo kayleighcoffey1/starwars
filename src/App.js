@@ -16,6 +16,7 @@ class App extends Component {
     constructor(props){
         super(props);
 
+        //holds all info for displaying and for query
         this.state = {
             people: [],
             movies: [],
@@ -28,6 +29,8 @@ class App extends Component {
 
         this.getPeople = this.getPeople.bind(this);
     }
+
+    //connects to each page for the relative data
 
     getPeople(){
         return axios.get("https://swapi.co/api/people")
@@ -92,6 +95,7 @@ class App extends Component {
 
 
 
+    //mount each getfunction
     componentDidMount()
     {
         this.getPeople();
@@ -102,14 +106,18 @@ class App extends Component {
         this.getPlanets();
     }
 
+    //filter for the search of API
     filter(e)
     {
         this.setState({filter: e.target.value})
     }
 
   render() {
+
+        //the searching process for each category
+
         let {people} = this.state;
-        let {movies} = this.state;//destructoring
+        let {movies} = this.state;
         let {starships} =  this.state;
         let {vehicles} = this.state;
         let {species} = this.state;
@@ -143,6 +151,7 @@ class App extends Component {
 
     return (
 
+        //page design
       <div className="App">
         <header className="App-header">
              <img src={logo} className="App-logo" alt="logo" />

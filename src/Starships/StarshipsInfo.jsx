@@ -13,7 +13,7 @@ class StarshipsInfo extends Component{
         this.close = this.close.bind(this);
     }
 
-    //for opening more information about each movie
+    //for opening more information about each starship
     open(){
         this.setState({expanded: !this.state.expanded})
     }
